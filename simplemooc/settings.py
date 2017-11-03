@@ -159,6 +159,7 @@ AUTH_USER_MODEL = 'accounts.User'
 # $python manage.py migrate accounts
 # $python manage.py migrate
 
+
 #Heroku settings
 DATABASES['default'] = dj_database_url.config()
 
