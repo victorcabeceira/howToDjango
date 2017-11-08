@@ -59,7 +59,7 @@
           {% for tag in thread.tags.all %}
           <a href="" title="">{{ tag }}</a>{% if not forloop.last %},{% endif %}
           {% endfor %}
-          <a class="fright" href="" title="">Atualizado a {{ thread.modified|timesince }} atrás</a>
+          <a class="fright" href="" title="">Atualizado a {{ thread.updated_at|timesince }} atrás</a>
         </p>
       </div>
       {% endfor %}
