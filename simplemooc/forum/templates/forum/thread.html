@@ -73,6 +73,15 @@
           <br />
           {{ reply.reply|linebreaksbr }}
           <br />
+          {% if reply.correct %}
+            {% if reply.author == user %}
+            <a href="{% url 'forum:reply_incorrect' reply.pk %}" class="pure-button button-error">Cancelar reposta selecionada</a>
+            {% endif %}
+            <span class="fright label-success">Resposta indicada pelo autor</span>
+            <br />
+          {% elif reply.author == user %}
+            <a href="{% url 'forum:reply_correct' reply.pk %}" class="pure-button button-success">Resposta Correta</a>
+          {% endif %}
         </p>
         {% endfor %}
         <hr />
